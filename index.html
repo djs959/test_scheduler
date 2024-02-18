@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<body>
+
+    <p>Our dedicated customer relations team is on hand during clinic hours to assist with all your enquiries.</p>
+    <p>Please complete the form below to:</p>
+
+
+
+    <script src="https://app.harpalclinic.co.uk/lightning/lightning.out.js"></script>
+    <script>
+        $Lightning.use("runtime_appointmentbooking:lightningOutGuest", function () {
+            $Lightning.createComponent(
+                "lightning:flow", // Top-level component of your app
+                {}, // Attributes to set on the component when created
+                "lexcontainer", // The DOM location to insert the component
+                function (component) {
+                    component.startFlow("Book_Discovery_Call");
+                }
+            );
+        }, 'https://app.harpalclinic.co.uk'); // Site endpoint
+    </script>
+    <div id="lexcontainer">
+        <!-- The Lightning Component will be inserted here -->
+    </div>
+
+</body>
